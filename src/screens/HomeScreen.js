@@ -10,6 +10,9 @@ const HomeScreen = ( { navigation } ) => {
         <Button title="Text input with State" onPress={ () => {
           navigation.navigate("Text")
         } }/>
+        <Button title="View Layout" onPress={ () => {
+          navigation.navigate("Align")
+        } }/>
     </View>
 }
 
@@ -17,9 +20,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'center',
-  },
+  }
 });
 
 export default HomeScreen;
