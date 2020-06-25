@@ -11,6 +11,7 @@ const TextState = () => {
             autoCorrect={ false }
             onChangeText={ (inputValue) => setName(inputValue)} />
         <Text>My name is { name }</Text>
+        { name.length < 3 && name.length !== 0 ? <Text>Name cannot have less than 3 characters</Text> : null }
     </View>
 
 }
