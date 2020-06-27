@@ -13,6 +13,9 @@ const HomeScreen = ( { navigation } ) => {
         <Button title="View Layout" onPress={ () => {
           navigation.navigate("Align")
         } }/>
+        <Button title="Restaurant App" onPress={ () => {
+          navigation.navigate("Search")
+        } }/>
     </View>
 }
 
