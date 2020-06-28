@@ -10,7 +10,7 @@ const ViewAlign = () => {
     </View>
 }
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: { 
         flexDirection: 'row',
         backgroundColor: '#fff',

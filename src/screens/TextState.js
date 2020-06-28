@@ -18,7 +18,7 @@ const TextState = () => {
 
 }
 
-styles = StyleSheet.create({ 
+const styles = StyleSheet.create({ 
     text: {
         borderColor: 'black',
         borderWidth: 0.5
