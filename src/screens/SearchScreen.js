@@ -10,21 +10,20 @@ const SearchScreen = () => {
     const [searchApi, results, errorMessage] = searchResults();
     const filterResultsByPrice = (priceRange) => {
         // priceRange === 2 || 3 || 4
-        
-        return results.filter( (result) => {
+        return results.filter((result) => {
             return result.restaurant.price_range === priceRange;
         })
     };
 
-    return <View style={ styles.backgroundStyle }>
-        <SearchBar search={ searchTerm }
-         onSearch={ (search) => setSearch(search) }
-         onSearchSubmit={ () => searchApi(searchTerm) } />
-        {errorMessage ? <Text>{ errorMessage }</Text> : null}
+    return <View style={styles.backgroundStyle}>
+        <SearchBar search={searchTerm}
+            onSearch={(search) => setSearch(search)}
+            onSearchSubmit={() => searchApi(searchTerm)} />
+        {errorMessage ? <Text>{errorMessage}</Text> : null}
         <ScrollView>
-            <ResultsList results={ filterResultsByPrice(2) } title="Cost Effective" />
-            <ResultsList results={ filterResultsByPrice(3) } title="Bit Pricier" />
-            <ResultsList results={ filterResultsByPrice(4) } title="Big Spender" />
+            <ResultsList results={filterResultsByPrice(2)} title="Cost Effective" />
+            <ResultsList results={filterResultsByPrice(3)} title="Bit Pricier" />
+            <ResultsList results={filterResultsByPrice(4)} title="Big Spender" />
         </ScrollView>
     </View>
 }

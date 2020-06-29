@@ -4,7 +4,9 @@ import HomeScreen from "./src/screens/HomeScreen";
 import CounterReductor from "./src/screens/CounterReductor";
 import TextState from "./src/screens/TextState";
 import ViewAlign from "./src/screens/ViewAlign";
-import SearchScreen from "./src/screens/SearchScreen"
+import SearchScreen from "./src/screens/SearchScreen";
+import ResultsShow from "./src/screens/ResultsShow";
+
 
 const navigator = createStackNavigator(
   {
@@ -12,7 +14,8 @@ const navigator = createStackNavigator(
     Counter: CounterReductor,
     Text: TextState,
     Align: ViewAlign,
-    Search: SearchScreen
+    Search: SearchScreen,
+    Results: ResultsShow
   },
   {
     initialRouteName: "Home",
