@@ -4,16 +4,16 @@ import { Feather } from '@expo/vector-icons'
 
 
 const SearchBar = ({ search, onSearch, onSearchSubmit }) => {
-    return <View style={ styles.backgroundStyle }>
-        <Feather name="search" style={ styles.iconStyle }></Feather>
+    return <View style={styles.backgroundStyle}>
+        <Feather name="search" style={styles.iconStyle}></Feather>
         <TextInput
-         value={ search }
-         onChangeText={ (text) => onSearch(text) } 
-         style={ styles.inputText } 
-         autoCapitalize="none"
-         autoCorrect={false}
-         placeholder="Search"
-         onEndEditing={ () => onSearchSubmit() }
+            value={search}
+            onChangeText={(text) => onSearch(text)}
+            style={styles.inputText}
+            autoCapitalize="none"
+            autoCorrect={false}
+            placeholder="Search"
+            onEndEditing={() => onSearchSubmit()}
         />
     </View>
 }

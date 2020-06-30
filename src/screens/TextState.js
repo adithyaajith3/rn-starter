@@ -6,12 +6,12 @@ import SearchBar from "../components/SearchBar";
 const TextState = () => {
     const [name, setName] = useState('');
     return <View style={styles.container}>
-        {/* <TextInput value={ name }
+        <TextInput value={ name }
             style={ styles.text }
             autoCapitalize="none"
             autoCorrect={ false }
-            onChangeText={ (inputValue) => setName(inputValue)} /> */}
-        <SearchBar search={ name } onSearch={ (search) => setName(search) } />
+            onChangeText={ (inputValue) => setName(inputValue)} />
+        {/* <SearchBar search={ name } onSearch={ (search) => setName(search) } /> */}
         <Text>My name is { name }</Text>
         { name.length < 3 && name.length !== 0 ? <Text>Name cannot have less than 3 characters</Text> : null }
     </View>

@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
-import zomato from "../api/zomato";
 import { FlatList } from "react-native-gesture-handler";
+import resultDetails from "../hooks/resultDetails";
 
 
 const ResultsShow = ({ navigation }) => {
   const id = navigation.getParam('id');
-  const [result, setResult] = useState(null);
-
-  console.log('the res ', result);
-  const getResult = async (id) => {
-    const response = await zomato.get(`/restaurant?res_id=${id}`);
-    setResult(response.data);
-  }
+  const [getResult, result, errorMessage] = resultDetails();
+  
   useEffect(() => {
     getResult(id)
   }, []);
@@ -20,8 +15,10 @@ const ResultsShow = ({ navigation }) => {
   if (!result) {
     return null;
   }
+
   return (
     <View style={styles.constainerStyle}>
+      {errorMessage ? <Text>{errorMessage}</Text> : null}
       <FlatList
         data={ result.highlights }
         showsVerticalScrollIndicator={false}

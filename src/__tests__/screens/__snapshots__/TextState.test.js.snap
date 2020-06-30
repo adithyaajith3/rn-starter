@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "flex": 1,
+      "padding": 20,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    autoCapitalize="none"
+    autoCorrect={false}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "borderColor": "black",
+        "borderWidth": 0.5,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Text>
+    My name is 
+    
+  </Text>
+</View>
+`;
