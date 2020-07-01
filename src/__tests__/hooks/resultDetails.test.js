@@ -1,10 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import renderer from 'react-test-renderer';
+import zomato from '../../api/zomato';
 
 import resultDetails from "../../hooks/resultDetails";
 
-jest.mock('axios');
+jest.mock('../../api/zomato');
 
 // const [getResult, result, errorMessage] = renderer.create(<resultDetails />);
 
@@ -127,12 +128,15 @@ describe('getResult', () => {
         }
 
 
-        axios.get.mockImplementationOnce(() => Promise.resolve(data));
+        // const zomatoMock = jest.genMockFromModule('../../api/zomato').default;
+        // axios.get.mockImplementationOnce(() => Promise.resolve(data));
+        // zomatoMock.get.mockImplementationOnce(() => Promise.resolve(data));
+        zomato.get.mockImplementationOnce(() => Promise.resolve(data));
 
         await expect(getResult('51822')).resolves.toEqual(data);
 
-        expect(axios.get).toHaveBeenCalledWith(
-            `/restaurant?res_id=${id}`,
+        expect(zomato.get).toHaveBeenCalledWith(
+            `/restaurant?res_id=51822`,
         );
     });
 });
